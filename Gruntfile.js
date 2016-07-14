@@ -32,6 +32,12 @@ module.exports = function(grunt) {
       }
     },
 
+    wiredep: {
+      target: {
+        src: 'src/index.html' // point to your HTML file.
+      }
+    },
+
     sass: {
       dist: {
         files: {
@@ -76,13 +82,14 @@ module.exports = function(grunt) {
       // for stylesheets, watch css and less files 
       // only run less and cssmin 
       stylesheets: { 
-        files: ['src/sass/assemblies.scss', 'src/sass/components/*.scss' 'package.json'], 
-        tasks: ['bower_concat', 'sass', 'cssmin', 'uglify'] 
+        files: ['src/sass/assemblies.scss', 'src/sass/components/*.scss', 'bower.json', 'package.json'], 
+        tasks: ['wiredep', 'sass'] 
       }
     }
   });
 
-  grunt.registerTask('default', ['bower_concat', 'sass', 'cssmin', 'uglify']);
+  grunt.registerTask('production', ['bower_concat', 'sass', 'cssmin', 'uglify']);
+  grunt.registerTask('dev', ['wiredep', 'sass']);
 
 
   // ===========================================================================

@@ -1,5 +1,192 @@
-$primaryColor: #ffffff;
+
+
+@import 'vendor/cornell.css';
+@import 'vendor/cornell-search.css';
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700|Crimson+Text:400,700);
+
+$screen-sm-min: 768px;
+$screen-xs-max: ($screen-sm-min - 1);
+$screen-md-min: 992px;
+$screen-sm-max: ($screen-md-min - 1);
+$screen-lg-min: 1200px;
+$screen-md-max: ($screen-lg-min - 1);
+
+$cornell-red: #b31b1b;
+$cornell-gray: #222222;
+$cornell-lightgray: #d8d2c9;
+
+$font-stack-serif: 'Crimson Text', 'Garamond', serif;
+$font-stack-sans: 'Roboto', 'Arial', sans-serif;
 
 body {
-    background: $primaryColor;
+	font-family: $font-stack-sans;
+	font-size: 12px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $font-stack-serif;
+}
+
+.assemblies {
+	.header {
+		.branded-search-bar {
+			background: $cornell-gray;
+
+			.branded-search-bar-icons {
+
+				span {
+					color: white;
+					font-size: 1.5em;
+					margin: 10px;
+				}
+			}
+			
+			.branded-search-bar-logo {
+				a {
+					background-image: url("../img/logo-sm.svg");
+				    background-size: 34px 34px;
+				    background-position: center center;
+				    height: 45px;
+				    width: 45px; 
+				    display: inline-block;
+				    background-repeat: no-repeat;
+				    vertical-align: middle;
+
+					div {
+						background-image: url("../img/logo-sm-text.svg");
+				        background-size: 139px 18px;
+				        background-repeat: no-repeat;
+				        width: 139px;
+				        height: 45px;
+				        background-position: left center;
+				        margin-left: 55px;
+				        text-indent: -99999em;
+
+					}
+				}
+				@media (min-width: $screen-sm-min) {
+					a {
+						display: none;
+					}
+
+				}
+			}
+		}
+
+		.branded-identity {
+			.cu-logo {
+				display: none;
+			}
+
+			@media (min-width: $screen-sm-min) {
+				height: 150px;
+				padding: 15px;
+				vertical-align: middle;
+
+				.cu-logo {
+					display: block;
+					text-align: right;
+					img {
+						height: 120px;
+						width: 120px;
+					}
+				}
+			}
+			
+			
+			.branded-title {
+
+				@media (min-width: $screen-sm-min) {
+					border-left: 1px solid $cornell-red;
+					margin-left: 30px;
+					padding-left: 30px;
+				}
+				
+					.branded-title-text {
+						font-family: $font-stack-serif;
+						font-weight: 400;
+						color: $cornell-red;
+						text-align: center;
+						font-size: 7vw;
+						@media (min-width: $screen-sm-min) {
+							height: 120px;
+							line-height: 105px;
+							font-size: 4em;
+							text-align: left;
+							@media (min-width: $screen-md-min) { 
+								font-size: 4.3em;
+							}
+						}
+
+						.branded-title-large {
+							vertical-align: middle;
+						}
+						.branded-title-small {
+							vertical-align: middle;
+							text-transform: uppercase;
+							font-size: .4em;
+							border-top: 1px solid $cornell-red;
+							border-bottom: 1px solid $cornell-red;
+							letter-spacing: 2px;
+							margin: 0 10px;
+								@media (min-width: $screen-sm-min) {
+									font-size: .4em;
+								}
+						}
+
+					}
+			}
+		}
+
+		.navbar-default {
+			font-family: $font-stack-serif;
+			background-image: none;
+			background: $cornell-red;
+			border: none;
+			border-radius: 0;
+			@media (min-width: $screen-sm-min) {
+				.container-fluid {
+					#navbar {
+						ul {
+							text-align: center;
+							float: none;
+							li {
+								float: none;
+								display: inline-block;
+								a {
+									color: white;
+									font-size: 1.5em;
+									padding-right: 25px;
+									padding-left: 25px;
+									@media (min-width: $screen-md-min) { 
+										font-size: 1.75em;
+									}
+								}
+
+								.dropdown-menu {
+									li {
+										display: list-item;
+										a {
+											font-size: 3em;
+											color: $cornell-gray;
+											text-align: left;
+											float: left;
+											@media (min-width: $screen-md-min) { 
+												font-size: 1.2em;
+											}
+
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+			
+		}
+
+	}
 }
